@@ -23,23 +23,22 @@ interface IContentListProps {
 
 const ContentList: React.FC<IContentListProps> = ({ items }) => {
   const classes = useStyles();
-  console.log(items)
 
   return (
     <>
-      {items.reverse().map(item => (
-        <ExpansionPanel key={`${item.Cases}-${item.Date}`}>
+      {items.map((item, id) => (
+        <ExpansionPanel key={`${item.Cases}-${item.Date}-${id}`}>
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls={`${item.Date}-content`}
           >
             <Typography className={classes.heading}>{`${item.Country}: ${moment(item.Date).startOf('day').fromNow()}`}</Typography>
-            <ExpansionPanelDetails>
-              <Typography>
-                {`${moment(item.Date).format('LL')}: ${item.Cases} ${item.Status} cases in ${item.Country}.`}
-              </Typography>
-            </ExpansionPanelDetails>
           </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <Typography>
+              {`${moment(item.Date).format('LL')}: ${item.Cases} ${item.Status} cases in ${item.Country}.`}
+            </Typography>
+          </ExpansionPanelDetails>
         </ExpansionPanel>
       ))}
     </>

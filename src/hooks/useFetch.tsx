@@ -8,7 +8,7 @@ const useFetch = (options: AxiosRequestConfig) => {
   
   useEffect(() => {
     const fetchData = async () => {
-      console.log(options)
+      console.log('fetch')
       setIsLoading(true);
 
       try {

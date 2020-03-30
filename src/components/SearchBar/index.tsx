@@ -9,7 +9,7 @@ const SearchBar: React.FC = () => {
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
-        <Paper className={classes.paper} elevation={3}>SearchBar</Paper>
+        <Paper className={classes.paper} elevation={1}>SearchBar</Paper>
       </Grid>
     </Grid>
   )
