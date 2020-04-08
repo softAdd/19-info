@@ -1,15 +1,15 @@
 import React from 'react';
+import Container from '@material-ui/core/Container';
 
-import ContentMain from 'components/ContentMain';
 import SearchBar from 'components/SearchBar';
 import ContentGrid from 'components/ContentGrid';
 
 const App: React.FC = () => {
   return (
-    <ContentMain>
+    <Container maxWidth="lg" disableGutters component="main">
       <SearchBar />
       <ContentGrid />
-    </ContentMain>
+    </Container>
   )
 }
 

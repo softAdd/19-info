@@ -10,7 +10,7 @@ const SearchBar: React.FC = () => {
     <Grid container spacing={3}>
       <Grid item xs={12}>
         <Paper className={classes.paper} elevation={1}>
-          <input type="text" />
+          Live Covid Counter
         </Paper>
       </Grid>
     </Grid>

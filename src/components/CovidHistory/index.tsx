@@ -23,10 +23,11 @@ interface IContentListProps {
 
 const ContentList: React.FC<IContentListProps> = ({ items }) => {
   const classes = useStyles();
+  const sortedItems = items.slice().reverse()
 
   return (
     <>
-      {items.map((item, id) => (
+      {sortedItems.slice(0, 10).map((item, id) => (
         <ExpansionPanel key={`${item.Cases}-${item.Date}-${id}`}>
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
