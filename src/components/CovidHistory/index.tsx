@@ -21,7 +21,7 @@ interface IContentListProps {
   items: Array<ContentItem>
 }
 
-const ContentList: React.FC<IContentListProps> = ({ items }) => {
+const CovidHistory: React.FC<IContentListProps> = ({ items }) => {
   const classes = useStyles();
   const sortedItems = items.slice().reverse()
 
@@ -46,4 +46,4 @@ const ContentList: React.FC<IContentListProps> = ({ items }) => {
   )
 }
 
-export default ContentList;
+export default CovidHistory;
