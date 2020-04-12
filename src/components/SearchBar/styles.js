@@ -6,4 +6,8 @@ export const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.primary,
   },
+  autocomplete: {
+    maxWidth: '500px',
+    margin: '20px 0',
+  },
 }));

@@ -15,21 +15,23 @@ const SearchBar: React.FC<Props> = ({ data }) => {
 
   useEffect(() => {
     const svg = select(chartRef.current);
-    svg
-      .selectAll('circle')
-      .data(cases)
-      .join(
-        enter => 
-          enter
-          .append('circle')
-          .attr('class', 'new')
-          .attr('r', value => value)
-          .attr('cx', value => value * 2)
-          .attr('cy', value => value * 2)
-          .attr('stroke', 'red'),
-        update => update.attr('class', 'updated'),
-        exit => exit.remove()
-      );
+
+    // svg.append('g').call()
+    // svg
+    //   .selectAll('circle')
+    //   .data(cases)
+    //   .join(
+    //     enter => 
+    //       enter
+    //       .append('circle')
+    //       .attr('class', 'new')
+    //       .attr('r', value => value)
+    //       .attr('cx', value => value * 2)
+    //       .attr('cy', value => value * 2)
+    //       .attr('stroke', 'red'),
+    //     update => update.attr('class', 'updated'),
+    //     exit => exit.remove()
+    //   );
   }, [cases])
 
   return (

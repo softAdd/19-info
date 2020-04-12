@@ -11,7 +11,7 @@ const fetchOptions: AxiosRequestConfig = { url: 'https://api.covid19api.com/coun
 
 const ContentGrid: React.FC = () => {
   const fetchSearch = useFetch(fetchOptions);
-  const fetchData = fetchSearch?.response?.data
+  const fetchData = fetchSearch?.response?.data;
 
   return (
     <Grid container spacing={3}>
