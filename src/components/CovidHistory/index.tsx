@@ -6,19 +6,10 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
-type ContentItem = {
-  Country: string,
-  Province: string,
-  Lat: number,
-  Lon: number,
-  Date: string,
-  Cases: number,
-  Status: string,
-}
+import { CovidInfo } from 'types';
 
 interface IContentListProps {
-  items: Array<ContentItem>
+  items: Array<CovidInfo>
 }
 
 const CovidHistory: React.FC<IContentListProps> = ({ items }) => {

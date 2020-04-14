@@ -3,42 +3,33 @@ import { useStyles } from './styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { select } from 'd3';
+import { CovidInfo, ChartItem } from 'types';
 
 interface Props {
-  data: Array<any>
+  data: Array<CovidInfo>
 }
 
-const SearchBar: React.FC<Props> = ({ data }) => {
+const SearchBar: React.FC<Props> = props => {
   const classes = useStyles();
   const chartRef = useRef(null);
-  const cases = data.map(({ Cases }) => Cases);
+  const data: Array<ChartItem> = props.data.map((dataItem) => {
+    return {
+      cases: dataItem.Cases,
+      date: dataItem.Date,
+    }
+  });
 
   useEffect(() => {
-    const svg = select(chartRef.current);
-
-    // svg.append('g').call()
-    // svg
-    //   .selectAll('circle')
-    //   .data(cases)
-    //   .join(
-    //     enter => 
-    //       enter
-    //       .append('circle')
-    //       .attr('class', 'new')
-    //       .attr('r', value => value)
-    //       .attr('cx', value => value * 2)
-    //       .attr('cy', value => value * 2)
-    //       .attr('stroke', 'red'),
-    //     update => update.attr('class', 'updated'),
-    //     exit => exit.remove()
-    //   );
-  }, [cases])
+    const ctx = select(chartRef.current);
+  }, [data])
 
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
         <Paper className={classes.paper} elevation={1}>
-          <svg height={200} ref={chartRef}></svg>
+          <svg height={200} ref={chartRef}>
+            <path d="M0,0 10,10 80,30, 50,100" stroke="blue" fill="none" />
+          </svg>
         </Paper>
       </Grid>
     </Grid>
